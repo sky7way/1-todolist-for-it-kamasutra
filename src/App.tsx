@@ -5,7 +5,6 @@ import { Todolist } from './components/Todolist';
 function App() {
     const title1 = 'What to learn 1';
     const title2 = 'What to learn 2';
-    const title3 = 'What to learn 3';
 
     const task1 = [
         {id: 1, title: "HTML&CSS", isDone: true},
@@ -20,9 +19,8 @@ function App() {
 
     return (
         <div className="App">
-            <Todolist title={ title1 } />
-            <Todolist title={ title2 } />
-            <Todolist title={ title3 } />
+            <Todolist title={ title1 } tasks={ task1 } />
+            <Todolist title={ title2 } tasks={ task2 } />
         </div>
     );
 }
