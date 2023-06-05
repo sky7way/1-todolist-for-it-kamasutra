@@ -1,26 +1,56 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import { Todolist } from './components/Todolist';
+import {Todolist} from './components/Todolist';
+import {TaskType} from "./components/Todolist";
+import {v1} from "uuid";
+
+export type  FilterValuesType = 'all' | 'active' | 'completed';
 
 function App() {
-    const title1 = 'What to learn 1';
-    const title2 = 'What to learn 2';
+    const title = 'What to learn';
 
-    const task1 = [
-        {id: 1, title: "HTML&CSS", isDone: true},
-        {id: 2, title: "JS", isDone: true},
-        {id: 3, title: "ReactJS", isDone: false},
-    ]
-    const task2 = [
-        {id: 1, title: "Hello world!", isDone: true},
-        {id: 2, title: "I'm happy!", isDone: false},
-        {id: 3, title: "Yo!", isDone: true},
-    ]
+    const [task, setTask] = useState([
+        {id: v1(), title: "HTML&CSS", isDone: true},
+        {id: v1(), title: "JS", isDone: true},
+        {id: v1(), title: "ReactJS", isDone: false},
+    ])
+
+    // const [filter, setFilter] = useState<FilterValuesType>('all');
+    // const changeFilter = (nextFilterValue: FilterValuesType) => {
+    //     setFilter(nextFilterValue)
+    // }
+    const removeTask = (taskId: string) => {
+        setTask(task.filter(el => el.id !== taskId))
+    }
+
+    const addTitle = (newTitle: string) => {
+        let newTask = {id: v1(), title: newTitle, isDone: false};
+        setTask([newTask, ...task]);
+    }
+    //
+    // // @ts-ignore
+    // const getFilteredTasks = (allTasks: TaskType[], currentFilterValue: FilterValuesType): TaskType[] => {
+    //     switch (currentFilterValue) {
+    //         case 'completed':
+    //             return allTasks.filter(el => el.isDone);
+    //         case  'active':
+    //             return allTasks.filter(el => !el.isDone);
+    //         default:
+    //             return allTasks
+    //     }
+    // }
+    //
+    // const filteredTasks: TaskType[] = getFilteredTasks(task, filter)
 
     return (
         <div className="App">
-            <Todolist title={ title1 } tasks={ task1 } />
-            <Todolist title={ title2 } tasks={ task2 } />
+            <Todolist
+                title={title}
+                tasks={task}
+                removeTask={removeTask}
+                addTitle={addTitle}
+                // changeFilter={changeFilter}
+            />
         </div>
     );
 }

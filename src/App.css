@@ -1,8 +1,162 @@
+@font-face {
+  font-family: 'Nunito', sans-serif;
+  src: local('Nunito'),
+  url('./fonts/Nunito/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-weight: auto;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .App {
-  padding: 30px;
+  /*height: 90vh;*/
   display: flex;
+  justify-content: center;
+  /*padding: 30px;*/
+  /*display: flex;*/
+  /*justify-content: flex-start;*/
+  /*min-height: 100%;*/
+  /*height: 100%;*/
+  /*font-family: 'Nunito', sans-serif;*/
+  /*font-family: Bad Script;*/
+  /*background: #91eae4;*/
+  /*!* fallback for old browsers *!*/
+  /*background: -webkit-linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5);*/
+  /*!* Chrome 10-25, Safari 5.1-6 *!*/
+  /*background: linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5);*/
+  /*!* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
+
 }
 
 .App > div {
-  margin-right: 50px;
+  /*margin-right: 500px;*/
 }
+
+.todolist {
+  margin: 20px auto;
+  box-shadow: 0 0 1em black;
+  /*max-width: 400px;*/
+  /*height: 100%;*/
+  /*width: 90vw;*/
+  border: 3px solid #86a8e7;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5);
+  background: linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5);
+  position: relative;
+}
+
+.todolist-content {
+  display: flex;
+  margin: 16px 32px;
+}
+
+.todolist-content input {
+  flex-grow: 1;
+  margin-right: 16px;
+  font-size: 18px;
+  padding: 8px 16px;
+  height: 36px;
+  border-radius: 3px;
+}
+
+.btn-add {
+  text-align: center;
+  font-size: 24px;
+  width: 36px;
+  height: 36px;
+  /*line-height: calc(32px * 0.9);*/
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.tasks-list {
+  /*display: flex;*/
+}
+
+.task-list-checkbox {
+  margin-right: 5px;
+}
+
+.btn-del {
+  margin-left: 10px;
+  margin-right: 0;
+  text-align: center;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  /*line-height: calc(18px * 0.2);*/
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/*li div input {*/
+/*  display: inline;*/
+/*}*/
+
+/*.tasks-list {*/
+/*  list-style-type: none;*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*}*/
+
+.tasks-list-item {
+  font-size: 18px;
+  /*width: 50vw;*/
+  list-style: none;
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+  opacity: 1.0;
+  margin-left: 5px;
+}
+
+.tasks-list-text {
+
+}
+
+.btn-block {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px 10px 10px;
+  margin-top: auto;
+}
+
+/*.todolist-header {*/
+/*  text-align: center;*/
+/*}*/
+
+/*button {*/
+/*  background-color: #86a8e7;*/
+/*  border: 2px solid #86a8e7;*/
+/*  color: white;*/
+/*  padding: 8px 20px;*/
+/*  text-align: center;*/
+/*  text-decoration: none;*/
+/*  display: inline-block;*/
+/*  font-size: 16px;*/
+/*  border-radius: 4px;*/
+/*  -webkit-transition-duration: 0.4s;*/
+/*  !* Safari *!*/
+/*  transition-duration: 0.4s;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*input {*/
+/*  background: white;*/
+/*  width: 100%;*/
+/*  box-sizing: border-box;*/
+/*  height: 30px;*/
+/*  font-size: 20px;*/
+/*  font-weight: normal;*/
+/*  padding-left: 25px;*/
+/*  border: 3px solid gray;*/
+/*  color: gray;*/
+/*}*/
+
+/*input:focus {*/
+/*  background: #edf1f5;*/
+/*  border: 3px solid #86a8e7;*/
+/*  outline: none;*/
+/*  color: #86a8e7;*/
+/*}*/
